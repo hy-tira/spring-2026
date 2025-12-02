@@ -1,5 +1,5 @@
 ---
-title: Exercises and lecture videos
+title: Exercises 
 permalink: /exercises
 ---
     
