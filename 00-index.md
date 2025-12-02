@@ -59,8 +59,6 @@ In person guidance is available on the Kumpula Campus on TBA. These latter two f
 
 The responsible teacher of the course in Spring 2026 is Veli Mäkinen. You can contact him by [email](mailto:veli.makinen@helsinki.fi).
 
--->
-
 <!--
 Kurssi muodostuu kahdesta 5 op laajuisesta osasuorituksesta. Keväällä 2024 voit suorittaa kurssin verkkokurssina, jonka materiaali on tällä sivustolla.
 
