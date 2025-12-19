@@ -32,8 +32,10 @@ To complete a part, you must solve at least 5 problems from each week. The gradi
 * 55-59 problems: Grade 4 *)
 * 60-64 problems: Grade 5 *)
 
-*) in addition, you must verify the grade in an on-site exam:
+*) 
+in addition, you must verify the grade in an on-site exam:
 * you need to get 50% correct of the multiple choice part of the exam to get any grade.
+
 When passing this minimum criteria: 
 * to verify grades 2,3,4 you need to get 60%,70%,80% correct of multiple choice part of the exam, respectively, otherwise the grade based on exercises will be lowered by one
 * to verify grade 5 you need to get 80% correct of the multiple choice part of the exam and you need to solve a specific assignment, otherwise the grade based on exercises will be lowered by one
