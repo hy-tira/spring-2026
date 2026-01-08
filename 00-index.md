@@ -48,7 +48,7 @@ The deadline for Part II is Sunday, May 10 at 23:59. The exercise problems will 
 
 {: .cell-w-3 }
 Week | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 |
-Publication date | 12.3. | 13.3. | 19.3. | 20.3. | 26.3. | 27.3. | 2.4. | 3.4. |
+Publication date | 12.3. | 13.3. | 19.3. | 20.3. | 26.3. | 27.3. | 1.4. | 10.4. |
 
 ## Guidance and contact information
 
