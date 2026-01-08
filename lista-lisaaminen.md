@@ -114,15 +114,15 @@ for i in range(n):
     numbers.append(i)
 start = time.time()
 for i in range(n):
-    del numbers[0]
+    numbers.pop(0)
 end = time.time()
 print(end-start)
 ```
 
 The code prints:
 ```
-0.004505634307861328
-8.517331838607788
+0.003998279571533203
+8.7571702003479
 ```
 
 
