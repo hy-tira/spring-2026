@@ -69,5 +69,62 @@ Studying the [list implementation in CPython](https://github.com/python/cpython/
 
 # Removing elements from list
 
-Removing elements from the end of a list takes $$O(1)$$ time by just keeping track of the position of the last element. However, this leaves unnecessary memory occupied. Mimicing the scheme on insertions, one could copy the elements to a new memory area when the list becomes half empty, but there is a problem: Consider a series of alternating deletions and insertions on an initially half empty list. This would cause linear time reallocation at every step. To cope with this problem, one can postpone the reallocation until the list is three-quarters empty. One can then show that any series of $$n$$ insertions and deletions at the end takes $$O(n)$$ time.
+Removing elements from the end of a list takes $$O(1)$$ time by just keeping track of the position of the last element. However, this leaves unnecessary memory occupied. Mimicing the doubling scheme on insertions, one could copy the elements to a new memory area when the list becomes half empty, but there is a problem: Consider a series of alternating deletions and insertions on an initially half empty list. This would cause linear time reallocation at every step. To cope with this problem, one can postpone the reallocation until the list is three-quarters empty. One can then show that any series of $$n$$ insertions and deletions at the end takes $$O(n)$$ time.
+To observe this postponing of reallocation between insertions and deletions in Python, consider the following code that continues our previous example:
+```python
+for i in range(n):
+    new_size = sys.getsizeof(numbers)
+
+    if new_size != old_size:       
+        print(len(numbers), new_size)
+        old_size = new_size
+        for j in range(n):
+            new_size = sys.getsizeof(numbers)
+            if new_size != old_size:       
+                print(len(numbers), new_size)
+                break
+            numbers.append(j)
+        break
+
+    numbers.pop()    
+```
+The code prints:
+```
+53 568
+65 664
+```
+This means that after deleting 46 last elements, some unallocated memory is freed, but leaving enough space to fit 11 elements (in general, constant fraction of $$n$$) before allocating more memory. 
+
+Note that Python list syntax supports deletions from arbitrary positions, but such deletions always cause full reallocation. The following code illustates the efficiency gap:
+```python
+import time
+
+numbers = []
+n = 100000
+for i in range(n):
+    numbers.append(i)
+
+start = time.time()
+for i in range(n):
+    numbers.pop()
+end = time.time()
+print(end-start)
+
+for i in range(n):
+    numbers.append(i)
+start = time.time()
+for i in range(n):
+    del numbers[0]
+end = time.time()
+print(end-start)
+```
+
+The code prints:
+```
+0.004505634307861328
+8.517331838607788
+```
+
+
+
 
