@@ -8,13 +8,13 @@ hide: true
 
 When an element is added to the end of a list, the time needed is $$O(1)$$ or $$O(n)$$ depending on whether the memory area reserved for the list has room for the new element or not. If there is no room, a new, bigger memory area is reserved and all the elements are copied there from the old memory area.
 
-Although the _worst case_ time complexity is $$O(n)$$, it can be shown that the _average case_ time complexity is $$O(1)$$ with an appropriate method of memory reservation. One such method is to _double_ the reserved memory area whenever more memory is needed.
+Although the _worst case_ time complexity is $$O(n)$$, it can be shown that the _amortized_ time complexity is $$O(1)$$ with an appropriate method of memory reservation. Here amortized $$O(1)$$ means that any series of $n$ operations takes $O(n)$ time. To achieve this complexity, one such method is to _double_ the reserved memory area whenever more memory is needed.
 
 Consider a situation, where the list contains $$n$$ elements and it was just moved to a new memory area. That last relocation moved $$n$$ elements, the one before that moved $$n/2$$ elements, the one before that moved $$n/4$$ elements, etc.. Thus the total number of element moves is:
 
 $$n+n/2+n/4+n/8+\dots < 2n = O(n).$$
 
-Because $$n$$ elements have been added to the list and the total number of moves is $$O(n)$$, the number of moves per element addition is $$O(1)$$ _on average_. 
+Because $$n$$ elements have been added to the list and the total number of moves is $$O(n)$$, the number of moves per element addition is $$O(1)$$. 
 
 More generally, if the size of the memory area is multiplied by $$c$$ with each expansion, the number of moves is
 
@@ -66,3 +66,8 @@ In the test computer (CPython 3.10.6), the code prints:
 This shows that an empty list requires 56 bytes of memory, and that each additional element needs 8 bytes. The memory usage grows when the number of elements grows to 1, 5, 9, 17, 25, etc.. For example, when the element count reaches 17, the new memory usage is 248 bytes and there is room for (248 - 56) / 8 = 24 elements. Thus the next expansion happens when the element count reaches 25.
 
 Studying the [list implementation in CPython](https://github.com/python/cpython/blob/0a9b339363a59be1249189c767ed6f46fd71e1c7/Objects/listobject.c#L72) shows that the number of elements that fit in the new memory area is $$n + \lfloor n/8 \rfloor + 6$$ rounded down to the nearest multiple of 4, where $n$ is the element count that triggered the expansion. For example when $$n=17$$, the formula evaluates to $$17+\lfloor 17/8 \rfloor + 6 = 25$$ and the nearest multiple of 4 is $$24$$. This means that the memory size changes approximately by the factor $9/8$ in each expansion. 
+
+# Removing elements from list
+
+Removing elements from the end of a list takes $$O(1)$$ time by just keeping track of the position of the last element. However, this leaves unnecessary memory occupied. Mimicing the scheme on insertions, one could copy the elements to a new memory area when the list becomes half empty, but there is a problem: Consider a series of alternating deletions and insertions on an initially half empty list. This would cause linear time reallocation at every step. To cope with this problem, one can postpone the reallocation until the list is three-quarters empty. One can then show that any series of $$n$$ insertions and deletions at the end takes $$O(n)$$ time.
+
