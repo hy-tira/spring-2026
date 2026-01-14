@@ -58,7 +58,7 @@ There is a Discord channel, where you can discuss with other students. [Join the
 
 In person guidance is available on the Kumpula Campus on Wednesdays 12–16 and Fridays 12–16 in room BK107. 
 
-These latter two forms of guidance are shared with the Finnish version of the course.
+Discord and in person guidance are shared with the Finnish version of the course.
 
 <!--, room BK107 in Exactum on Tuesdays 14-18, Wednesdays 12-15 and Thursdays 10-13.--> 
 
