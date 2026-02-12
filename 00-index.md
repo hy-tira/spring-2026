@@ -8,7 +8,7 @@ The course consists of two five credit course units, Part I and Part II. You can
 
 The course format is the same for degree students of the University of Helsinki and for Open University students.
 
-To take the exam and receive official course credits, you need to [register to the course](https://studies.helsinki.fi/courses/course-implementation/hy-opt-cur-2526-f21366b3-31fc-485d-b932-21b8ca3c8dbe/BSCS10031).  
+To take the exam and receive official course credits, you need to register to the course: [Part I](https://studies.helsinki.fi/courses/course-implementation/hy-opt-cur-2526-f21366b3-31fc-485d-b932-21b8ca3c8dbe/BSCS10031) and [Part II](https://studies.helsinki.fi/courses/course-implementation/hy-opt-cur-2526-1f65a406-1e3d-4efe-89c7-dfb33ad32fb2).  
 
 ## Material and Lectures
 
