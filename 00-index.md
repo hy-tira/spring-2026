@@ -12,13 +12,13 @@ To take the exam and receive official course credits, you need to register to th
 
 ## Material and Lectures
 
-The self-study material found on this MOOC page is sufficient to complete the course. 
+The self-study material found on this MOOC page is sufficient to complete the course, but further material in Moodle (see the official course pages) regarding lectures may provide additional insights.  
 
 Part I covers the sections 1–8 (one section per week).
 
 Part II covers the sections 9–16.
 
-Course lectures take place on Fridays at 10-12 on the Exactum Campus (Room B222 in the Exactum building). Lectures offer additional guidance to weekly topics.
+Course lectures take place on Fridays at 10-12 on the Exactum Campus (Room B222 for part I and  D123 for part II in the Exactum building). Lectures offer additional guidance to weekly topics.
 
 ## Exercises and Grading
 
